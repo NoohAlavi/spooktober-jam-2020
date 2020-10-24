@@ -2,20 +2,27 @@ extends Area2D
 
 # NEWSPAPERS
 var newspaperCount;
+
 export var totalNewspaperCount = 3;
+
 func hasNewspapers():
 	return newspaperCount != 0;
+
 func isFull():
 	return newspaperCount == totalNewspaperCount;
+
 func isEmpty():
 	return newspaperCount == 0;
+
 func empty():
 	newspaperCount = 0;
+
 func fill():
 	newspaperCount = totalNewspaperCount;
 
 # TIMER
 export var cooldownTime = 30
+
 var timer = 0;
 
 # SYSTEMS
