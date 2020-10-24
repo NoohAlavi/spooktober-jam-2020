@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Spooktober game over.wav-f80fc2b29bd8fdecf86049781d23e52c.sample"
+
+[deps]
+
+source_file="res://Music/Spooktober game over.wav"
+dest_files=[ "res://.import/Spooktober game over.wav-f80fc2b29bd8fdecf86049781d23e52c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
