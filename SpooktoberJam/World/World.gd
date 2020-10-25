@@ -9,7 +9,7 @@ func _ready() -> void:
 		spawn_citizen((rand_range(0,1) > 0.25));
 
 func spawn_citizen(is_witness = false) -> void:
-	var new_citizen: KinematicBody2D = citizen_scene.instance(); 
+	var new_citizen: Area2D = citizen_scene.instance(); 
 	var randX = rand_range(-2000, 2000);
 	var posY = 480;
 	new_citizen.is_witness = is_witness;
