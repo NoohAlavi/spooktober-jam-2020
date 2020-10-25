@@ -11,4 +11,9 @@ func _physics_process(_delta: float) -> void:
 	move();
 	
 func move():
-	pass
+	if is_witness:
+		#move to police station
+		pass
+	else:
+		#randomly move around
+		pass
