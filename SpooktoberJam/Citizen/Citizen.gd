@@ -15,5 +15,8 @@ func move():
 		#move to police station
 		pass
 	else:
+		var randX = rand_range(-2000, 2000);
+		#velocity.x = lerp()
 		#randomly move around
 		pass
+	move_and_slide(velocity);
