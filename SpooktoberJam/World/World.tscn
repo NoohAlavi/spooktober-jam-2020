@@ -120,9 +120,6 @@ __meta__ = {
 
 [node name="Citizens" type="Node" parent="."]
 
-[node name="Citizen" parent="Citizens" instance=ExtResource( 1 )]
-position = Vector2( 512, 480 )
-
 [node name="CitizenSpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
