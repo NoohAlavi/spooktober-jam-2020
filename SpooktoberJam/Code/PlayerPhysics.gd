@@ -13,7 +13,7 @@ func _ready():
 	position.y = overground_y;
 	
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if (touching_vent && (position.y == overground_y || position.y == underground_y )):
 		if (Input.get_action_strength("ui_up")):
 			vertical_mode = -1
@@ -35,7 +35,7 @@ func _physics_process(delta):
 				vertical_mode = 0; # Resetting vertical mode
 			
 	velocity.y = vertical_speed * vertical_mode;
-	move_and_slide(velocity);
+	velocity = move_and_slide(velocity);
 
 func set_touching_vent(boolean):
 	touching_vent = boolean;
