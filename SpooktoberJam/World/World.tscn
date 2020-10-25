@@ -120,14 +120,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Citizens" type="Node" parent="."]
-
 [node name="CitizenSpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 262.831, 475 )
+position = Vector2( 262.831, 675 )
 overground_y = 475
 underground_y = 700
 
@@ -148,4 +146,6 @@ position = Vector2( -430.548, 493.627 )
 
 [node name="Vent" parent="." instance=ExtResource( 4 )]
 position = Vector2( 72.9126, 490.799 )
+
+[node name="Citizens" type="Node" parent="."]
 [connection signal="timeout" from="CitizenSpawnTimer" to="." method="_on_CitizenSpawnTimer_timeout"]

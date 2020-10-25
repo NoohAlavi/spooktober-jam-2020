@@ -1,7 +1,9 @@
-extends KinematicBody2D;
+extends Area2D;
 
 export var is_witness: bool = false;
 export var velocity: Vector2 = Vector2.ZERO;
+
+var rand_nums = [2, 4, 6, 8]
 
 var reached_destination: bool = true;
 
@@ -18,13 +20,13 @@ func move():
 	else:
 		if reached_destination:
 			reached_destination = false;
-			var randX = rand_range(-2000, 2000);
+			var randX = rand_range(-2000, 2000) * pow(rand_nums[rand_range(0, 3)], 10.0);
 			if position.x < randX:
 				velocity.x += 20;
 			if position.x > randX:
-				velocity.y -= 20
+				velocity.x -= 20
 			if position.x == randX:
 				reached_destination = true;
 		#randomly move around
 		pass
-	velocity = move_and_slide(velocity);
+	position += velocity;
