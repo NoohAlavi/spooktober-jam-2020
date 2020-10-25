@@ -20,11 +20,11 @@ func move():
 	else:
 		if reached_destination:
 			reached_destination = false;
-			var randX = rand_range(-2000, 2000) * pow(rand_nums[rand_range(0, 3)], 10.0);
+			var randX = rand_range(-2000, 2000) * pow(rand_nums[rand_range(0, 3)], 3.5);
 			if position.x < randX:
-				velocity.x += 20;
+				velocity.x += 3.5;
 			if position.x > randX:
-				velocity.x -= 20
+				velocity.x -= 3.5;
 			if position.x == randX:
 				reached_destination = true;
 		#randomly move around
