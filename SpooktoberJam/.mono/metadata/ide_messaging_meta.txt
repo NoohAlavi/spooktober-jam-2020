@@ -1,2 +1,2 @@
-﻿63709
-C:\Users\nooha\Downloads\Godot_v3.2.3-stable_mono_win64\Godot_v3.2.3-stable_mono_win64.exe
+﻿54374
+D:\Applications\Godot_v3.2.3-stable_mono_win64\Godot_v3.2.3-stable_mono_win64.exe

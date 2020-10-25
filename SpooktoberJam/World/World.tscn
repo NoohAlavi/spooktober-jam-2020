@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Citizen/Citizen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/World.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Vent.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
@@ -126,4 +128,27 @@ position = Vector2( 512, 480 )
 [node name="CitizenSpawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 262.831, 475 )
+overground_y = 475
+underground_y = 700
+
+[node name="Vent6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1176.18, 496.516 )
+
+[node name="Vent5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1716.5, 507.111 )
+
+[node name="Vent4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -864.349, 492.279 )
+
+[node name="Vent3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 987.593, 496.516 )
+
+[node name="Vent2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -430.548, 493.627 )
+
+[node name="Vent" parent="." instance=ExtResource( 4 )]
+position = Vector2( 72.9126, 490.799 )
 [connection signal="timeout" from="CitizenSpawnTimer" to="." method="_on_CitizenSpawnTimer_timeout"]
