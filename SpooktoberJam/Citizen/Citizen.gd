@@ -19,4 +19,4 @@ func move():
 		#velocity.x = lerp()
 		#randomly move around
 		pass
-	move_and_slide(velocity);
+	velocity = move_and_slide(velocity);
