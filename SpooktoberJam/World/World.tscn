@@ -102,9 +102,9 @@ __meta__ = {
 }
 
 [node name="Sky" type="ColorRect" parent="."]
-margin_left = -1152.0
+margin_left = -2360.0
 margin_top = -184.0
-margin_right = 1920.0
+margin_right = 3128.0
 margin_bottom = 488.0
 color = Color( 0.529412, 0.807843, 0.980392, 1 )
 __meta__ = {
@@ -112,9 +112,9 @@ __meta__ = {
 }
 
 [node name="Ground" type="ColorRect" parent="."]
-margin_left = -1144.0
+margin_left = -2320.0
 margin_top = 480.0
-margin_right = 1928.0
+margin_right = 3128.0
 margin_bottom = 600.0
 color = Color( 0.0470588, 0.576471, 0, 1 )
 __meta__ = {
