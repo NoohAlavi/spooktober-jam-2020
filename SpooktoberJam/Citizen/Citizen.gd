@@ -3,6 +3,7 @@ extends KinematicBody2D;
 export var is_witness: bool = false;
 export var velocity: Vector2 = Vector2.ZERO;
 
+var reached_destination: bool = true;
 
 func _process(_delta: float) -> void:
 	$"Exclamation Mark".visible = is_witness;
@@ -15,8 +16,15 @@ func move():
 		#move to police station
 		pass
 	else:
-		var randX = rand_range(-2000, 2000);
-		#velocity.x = lerp()
+		if reached_destination:
+			reached_destination = false;
+			var randX = rand_range(-2000, 2000);
+			if position.x < randX:
+				velocity.x += 20;
+			if position.x > randX:
+				velocity.y -= 20
+			if position.x == randX:
+				reached_destination = true;
 		#randomly move around
 		pass
 	velocity = move_and_slide(velocity);
