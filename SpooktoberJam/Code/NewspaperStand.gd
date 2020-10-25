@@ -5,13 +5,13 @@ var newspaperCount;
 
 export var totalNewspaperCount = 3;
 
-func hasNewspapers():
+func has_newspapers():
 	return newspaperCount != 0;
 
-func isFull():
+func is_full():
 	return newspaperCount == totalNewspaperCount;
 
-func isEmpty():
+func is_empty():
 	return newspaperCount == 0;
 
 func empty():
