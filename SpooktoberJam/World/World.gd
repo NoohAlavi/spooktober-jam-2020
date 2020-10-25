@@ -8,10 +8,14 @@ func _ready() -> void:
 		spawn_citizen();
 
 func spawn_citizen() -> void:
-	var new_citizen = citizen_scene.instance(); 
+	var new_citizen: KinematicBody2D = citizen_scene.instance(); 
+	var randX = rand_range(-2000, 2000);
+	var posY = 448;
 	$Citizens.add_child(new_citizen);
+	new_citizen.position.x = randX;
+	new_citizen.position.y = posY;
 	citizens_array.append(new_citizen);
-
+	
 
 func _on_CitizenSpawnTimer_timeout() -> void:
 	for i in range(3):
