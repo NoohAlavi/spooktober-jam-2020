@@ -37,11 +37,10 @@ func _process(delta):
 
 	timer += delta
 
+func _on_Area2D_area_entered(area):
+	if (area.name == "Citizen"):
+		if (newspaperCount > 0):
+			newspaperCount -= 1;
 
-
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Area2D_area_exited(area):
+	pass # Replace with function body.
