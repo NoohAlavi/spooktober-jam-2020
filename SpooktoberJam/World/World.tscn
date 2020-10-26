@@ -101,6 +101,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Building11" type="ColorRect" parent="Buildings"]
+margin_left = -2280.0
+margin_top = 128.0
+margin_right = -1816.0
+margin_bottom = 480.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Sky" type="ColorRect" parent="."]
 margin_left = -2360.0
 margin_top = -184.0

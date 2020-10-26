@@ -15,12 +15,13 @@ func _physics_process(_delta: float) -> void:
 	
 func move():
 	if is_witness:
-		#move to police station
+		if position.x > -2000:
+			velocity.x -= 3.5;
 		pass
 	else:
 		if reached_destination:
 			reached_destination = false;
-			var randX = rand_range(-2000, 2000) * pow(rand_nums[rand_range(0, 3)], 3.5);
+			var randX = rand_range(-1500, 1500) * pow(rand_nums[rand_range(0, 3)], 3.5);
 			if position.x < randX:
 				velocity.x += 3.5;
 			if position.x > randX:
