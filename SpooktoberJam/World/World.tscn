@@ -101,20 +101,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Building11" type="ColorRect" parent="Buildings"]
-margin_left = -2280.0
-margin_top = 128.0
-margin_right = -1816.0
-margin_bottom = 480.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Sky" type="ColorRect" parent="."]
-margin_left = -2360.0
+margin_left = -1152.0
 margin_top = -184.0
-margin_right = 3128.0
+margin_right = 1920.0
 margin_bottom = 488.0
 color = Color( 0.529412, 0.807843, 0.980392, 1 )
 __meta__ = {
@@ -122,9 +112,9 @@ __meta__ = {
 }
 
 [node name="Ground" type="ColorRect" parent="."]
-margin_left = -2320.0
+margin_left = -1144.0
 margin_top = 480.0
-margin_right = 3128.0
+margin_right = 1928.0
 margin_bottom = 600.0
 color = Color( 0.0470588, 0.576471, 0, 1 )
 __meta__ = {
@@ -141,9 +131,11 @@ wait_time = 5.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 264.719, 477.832 )
+position = Vector2( 264, 477.832 )
 overground_y = 475
 underground_y = 700
+max_x = 2000
+min_x = -1000
 
 [node name="Vent6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1176.18, 496.516 )
