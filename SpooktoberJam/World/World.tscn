@@ -31,12 +31,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Building10" type="ColorRect" parent="Buildings"]
+[node name="PoliceStation" type="ColorRect" parent="Buildings"]
 margin_left = -816.0
 margin_top = 8.0
 margin_right = -568.0
 margin_bottom = 480.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0.00392157, 0.368627, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -103,9 +103,9 @@ __meta__ = {
 
 [node name="Sky" type="ColorRect" parent="."]
 margin_left = -1152.0
-margin_top = -184.0
+margin_top = -176.0
 margin_right = 1920.0
-margin_bottom = 488.0
+margin_bottom = 496.0
 color = Color( 0.529412, 0.807843, 0.980392, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
