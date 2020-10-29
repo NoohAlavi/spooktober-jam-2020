@@ -18,15 +18,21 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	move(delta);
 	if is_touching_player and Input.is_action_pressed("interact"):
-		queue_free()
+		print("Interact")
+		free()
+		
+	if Input.is_action_pressed("interact"):
+		print("Interact Button")
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if body.name == "Player":
 		is_touching_player = true
+		print("is_touching_player" + str(is_touching_player) + name);
 
 func _on_body_exited(body: PhysicsBody2D) -> void:
 	if body.name == "Player":
 		is_touching_player = false
+		print("is_touching_player" + str(is_touching_player) + name);
 	
 func move(dt):
 	velocity.x = 0;
