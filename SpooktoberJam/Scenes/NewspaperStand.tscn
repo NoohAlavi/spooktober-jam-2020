@@ -14,9 +14,11 @@ position = Vector2( -0.595276, -0.198425 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.628928, -0.595291 )
-scale = Vector2( 0.683144, 1 )
+position = Vector2( -2.38419e-07, 4.76837e-07 )
+scale = Vector2( 2.61221, 2.61221 )
 z_index = 4
 texture = ExtResource( 1 )
 [connection signal="area_entered" from="." to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Area2D_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_NewspaperStand_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_NewspaperStand_body_exited"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/citizen.png-563e92375335c8de57d44153ed592758.stex"
+path="res://.import/buildingSpriteSheet.png-e76e6ff5fb91d656843f78dfb368d66a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/citizen.png"
-dest_files=[ "res://.import/citizen.png-563e92375335c8de57d44153ed592758.stex" ]
+source_file="res://Art/buildingSpriteSheet.png"
+dest_files=[ "res://.import/buildingSpriteSheet.png-e76e6ff5fb91d656843f78dfb368d66a.stex" ]
 
 [params]
 
