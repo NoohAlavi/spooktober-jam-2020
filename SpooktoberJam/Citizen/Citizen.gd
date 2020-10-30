@@ -11,7 +11,7 @@ var rand_nums = [2, 4, 6, 8]
 func _ready() -> void:
 	speed = (randf()*40) + 20
 	connect("body_entered", self, "_on_body_entered")
-	connect("body_entered", self, "_on_body_exited")
+	connect("body_exited", self, "_on_body_exited")
 
 func _process(_delta: float) -> void:
 	$"Exclamation Mark".visible = is_witness;
