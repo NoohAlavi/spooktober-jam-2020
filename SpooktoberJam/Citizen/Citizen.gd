@@ -6,21 +6,21 @@ export var speed = 10;
 export var is_touching_player: bool = false
 export var reached_destination: bool = true;
 
+var player: KinematicBody2D
+
 var rand_nums = [2, 4, 6, 8]
 
 func _ready() -> void:
-	speed = (randf()*40) + 20
+	#speed = (randf()*40) + 20
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
+	player = get_tree().root.get_node("World/Player")
 
 func _process(_delta: float) -> void:
 	$"Exclamation Mark".visible = is_witness;
 	
 	if is_touching_player and Input.is_action_just_pressed("interact"):
-		if is_inside_tree():
-			queue_free()
-		else:
-			call_deferred("free")
+		kill()
 	
 func _physics_process(delta: float) -> void:
 	move(delta);
@@ -29,12 +29,12 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: PhysicsBody2D) -> void:
 	if body.name == "Player":
 		is_touching_player = true
-		print("is_touching_player" + str(is_touching_player) + name);
+		print("is_touching_player " + str(is_touching_player) + name);
 
 func _on_body_exited(body: PhysicsBody2D) -> void:
 	if body.name == "Player":
 		is_touching_player = false
-		print("is_touching_player" + str(is_touching_player) + name);
+		print("is_touching_player " + str(is_touching_player) + name);
 	
 func oldmove(dt):
 	velocity.x = 0;
@@ -77,3 +77,10 @@ func move(dt):
 	
 	position += (velocity * dt);
 
+func kill():
+	if (player.cooldown == 0):
+		if is_inside_tree():
+			queue_free()
+		else:
+			call_deferred("free")
+		player.cooldown = player.max_cooldown

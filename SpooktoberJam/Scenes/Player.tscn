@@ -27,3 +27,17 @@ smoothing_enabled = true
 stream = ExtResource( 3 )
 volume_db = -20.0
 autoplay = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -491.638
+margin_top = 220.003
+margin_right = -425.638
+margin_bottom = 234.003
+rect_scale = Vector2( 4, 4 )
+text = "Cooldown: 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}

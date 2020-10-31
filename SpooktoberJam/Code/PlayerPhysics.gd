@@ -10,13 +10,21 @@ var vertical_mode = 0;
 var velocity = Vector2()
 var touching_vent = false
 
-
+export var max_cooldown = 5;
+var cooldown
+var cooldown_label: Label
 
 func _ready():
+	cooldown = max_cooldown
 	position.y = overground_y;
-	
+	$CooldownTimer.connect("timeout", self, "_on_cooldown_timeout")
+	cooldown_label = $Label
+
+func _process(delta: float) -> void:
+	cooldown_label.text = "Cooldown: " + str(cooldown)
 
 func _physics_process(_delta):
+	print(cooldown)
 	if (touching_vent && (position.y == overground_y || position.y == underground_y )):
 		if (Input.get_action_strength("ui_up")):
 			vertical_mode = -1
@@ -45,4 +53,7 @@ func _physics_process(_delta):
 func set_touching_vent(boolean):
 	touching_vent = boolean;
 
-
+func _on_cooldown_timeout():
+	print("lol")
+	if cooldown > 0:
+		cooldown -= 1
