@@ -3,8 +3,11 @@ extends Area2D;
 export var is_witness: bool = false;
 export var velocity: Vector2 = Vector2.ZERO;
 export var speed = 10;
-export var is_touching_player: bool = false
+export var is_touching_player: bool = false;
+var loitering_timer = 0;
+export var loitering_time_max = 5;
 export var reached_destination: bool = true;
+var destinationX = 0;
 
 var player: KinematicBody2D
 
@@ -36,46 +39,28 @@ func _on_body_exited(body: PhysicsBody2D) -> void:
 		is_touching_player = false
 		print("is_touching_player " + str(is_touching_player) + name);
 	
-func oldmove(dt):
-	velocity.x = 0;
-	if is_witness:
-		if position.x > -2000:
-			velocity.x -= speed;
-		else:
-			velocity.x += speed;
-		pass
-	else:
-		if reached_destination:
-			reached_destination = false;
-			var randX = rand_range(-1500, 1500) * pow(rand_nums[rand_range(0, 3)], speed);
-			if position.x < randX:
-				velocity.x += speed;
-			if position.x > randX:
-				velocity.x -= speed;
-			if position.x == randX:
-				reached_destination = true;
-		#randomly move around
-		pass
-	position += (velocity * dt);
 
 func move(dt):
 	velocity.x = 0;
 	if reached_destination:
+		destinationX = rand_range(-1500,1500);
 		reached_destination = false;
-		var randX = rand_range(-1500, 1500) * pow(rand_nums[rand_range(0, 3)], speed);
-		if position.x < randX:
-			velocity.x += speed;
-		if position.x > randX:
-			velocity.x -= speed;
-		if position.x == randX:
-			reached_destination = true;
-	else:
-		if position.x > -2000:
-			velocity.x -= speed;
-		else:
-			velocity.x += speed;
 	
+	if (loitering_timer > 0):
+		loitering_timer -= dt;
+	else:
+		if abs(destinationX - position.x) < 10:
+			reached_destination = true;
+		elif (destinationX > position.x):
+			velocity.x = speed;
+		elif (destinationX < position.x):
+			velocity.x = -speed;
+			
 	position += (velocity * dt);
+
+func begin_loitering():
+	loitering_timer = loitering_time_max;
+	
 
 func kill():
 	if (player.cooldown == 0):
