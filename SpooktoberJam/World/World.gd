@@ -3,8 +3,11 @@ extends Node2D;
 export var citizens_array = [];
 export var citizen_scene: PackedScene;
 
+var lives = 5
+
 func _ready() -> void:
 	randomize();
+	$PoliceStation.connect("body_entered", self, "_on_area_entered")
 	for _i in range(10):
 		spawn_citizen((rand_range(0,1) > 0.25));
 
@@ -22,3 +25,8 @@ func spawn_citizen(is_witness = false) -> void:
 func _on_CitizenSpawnTimer_timeout() -> void:
 	for _i in range(3):
 		spawn_citizen();
+
+func _on_body_entered(body: KinematicBody2D):
+	if body.is_in_group("Citizens"):
+		if body.is_witness:
+			lives -= 1

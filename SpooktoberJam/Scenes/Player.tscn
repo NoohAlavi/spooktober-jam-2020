@@ -31,13 +31,26 @@ autoplay = true
 [node name="CooldownTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="Label" type="Label" parent="."]
-margin_left = -491.638
-margin_top = 220.003
-margin_right = -425.638
-margin_bottom = 234.003
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 15.7112
+margin_top = 466.785
+margin_right = 93.7112
+margin_bottom = 480.785
 rect_scale = Vector2( 4, 4 )
 text = "Cooldown: 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LivesLabel" type="Label" parent="CanvasLayer"]
+margin_left = 15.7112
+margin_top = 525.154
+margin_right = 93.7112
+margin_bottom = 539.154
+rect_scale = Vector2( 4, 4 )
+text = "Lives: 5"
 __meta__ = {
 "_edit_use_anchors_": false
 }

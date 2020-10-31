@@ -18,10 +18,11 @@ func _ready():
 	cooldown = max_cooldown
 	position.y = overground_y;
 	$CooldownTimer.connect("timeout", self, "_on_cooldown_timeout")
-	cooldown_label = $Label
+	cooldown_label = $CanvasLayer/Label
 
 func _process(delta: float) -> void:
 	cooldown_label.text = "Cooldown: " + str(cooldown)
+	$CanvasLayer/LivesLabel.text = "Lives: " + str($"../../World".lives)
 
 func _physics_process(_delta):
 	print(cooldown)
