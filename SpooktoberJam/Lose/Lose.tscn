@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Lose/Lose.gd" type="Script" id=1]
+
+[node name="Lose" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 608.0
+color = Color( 0.568627, 0.12549, 0.12549, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 400.0
+margin_top = 96.0
+margin_right = 454.0
+margin_bottom = 127.0
+rect_scale = Vector2( 4, 4 )
+text = "you lose
+rip"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 408.0
+margin_top = 312.0
+margin_right = 477.0
+margin_bottom = 332.0
+rect_scale = Vector2( 3, 3 )
+text = "try agen?"
