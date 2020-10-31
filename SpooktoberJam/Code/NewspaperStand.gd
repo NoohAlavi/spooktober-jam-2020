@@ -57,6 +57,7 @@ func _process(delta):
 
 func _on_Area2D_area_entered(area):
 	if (area.name.left(8) == "@Citizen" || area.name.left(7) == "Citizen"):
+		area.begin_loitering();
 		print(area.name + " collding with newspaper ayayay")
 		if (newspaperCount > 0):
 			print("newspaperCount -= 1");
@@ -66,7 +67,6 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_area_exited(area):
 	pass
-
 
 func _on_NewspaperStand_body_entered(body):
 	if (body.name == "Player"):
